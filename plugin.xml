@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.bpmn2.modeler.runtime">
+      <runtime
+            class="bpmn2.tutorial.ImixsRuntimeExtension"
+            id="bpmn2.tutorial.ImixsRuntimeExtension"
+            name="ImixsRuntimeExtension">
+      </runtime>
+      <customTask
+            category="Extended BPMN Workflow"
+            featureContainer="extendingruntime.SecureCallActivityFeatureContainer"
+            id="ExtendingRuntime.secureCallActivity"
+            name="Secure Call Activity"
+            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            type="CallActivity">
+         <property
+               name="type"
+               value="SecureCallActivity">
+         </property>
+      </customTask>
+      <customTask
+            category="Extended BPMN Workflow"
+            featureContainer="extendingruntime.CustomTaskFeatureContainer"
+            icon="risk.png"
+            id="ExtendingRuntime.customTask"
+            name="CustomTask"
+            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            type="Task">
+         <property
+               name="type"
+               value="CustomTask">
+         </property>
+      </customTask>
+   </extension>
+
+</plugin>
