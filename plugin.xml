@@ -11,6 +11,7 @@
       <customTask
             category="Extended BPMN Workflow"
             featureContainer="extendingruntime.SecureCallActivityFeatureContainer"
+            icon="risk.png"
             id="ExtendingRuntime.secureCallActivity"
             name="Secure Call Activity"
             runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
@@ -23,14 +24,26 @@
       <customTask
             category="Extended BPMN Workflow"
             featureContainer="extendingruntime.CustomTaskFeatureContainer"
-            icon="risk.png"
+            icon="lock.png"
             id="ExtendingRuntime.customTask"
-            name="CustomTask"
+            name="Custom Task"
             runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
             type="Task">
          <property
                name="type"
                value="CustomTask">
+         </property>
+      </customTask>
+      <customTask
+            category="Extended BPMN Workflow"
+            featureContainer="extendingruntime.SecureSequenceFlowFeatureContainer"
+            id="ExtendingRuntime.secureSequenceFlow"
+            name="Secure Sequence Flow"
+            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            type="SequenceFlow">
+         <property
+               name="type"
+               value="SecureSequenceFlow">
          </property>
       </customTask>
    </extension>

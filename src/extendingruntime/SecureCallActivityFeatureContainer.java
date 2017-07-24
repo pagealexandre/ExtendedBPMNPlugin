@@ -32,7 +32,7 @@ public class SecureCallActivityFeatureContainer extends CustomShapeFeatureContai
 
  @Override
  public ICustomFeature[] getCustomFeatures(IFeatureProvider fp) {
- return new ICustomFeature[] {new ShowPropertiesFeature(fp)};
+	 return new ICustomFeature[] {new ShowPropertiesFeature(fp)};
  }
  
  

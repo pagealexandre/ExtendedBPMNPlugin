@@ -3,7 +3,6 @@ package extendingruntime;
 import java.net.URL;
 
 import org.eclipse.bpmn2.modeler.core.runtime.CustomTaskDescriptor;
-import org.eclipse.bpmn2.modeler.core.runtime.CustomTaskImageProvider.IconSize;
 import org.eclipse.bpmn2.modeler.core.runtime.TargetRuntime;
 import org.eclipse.graphiti.ui.internal.GraphitiUIPlugin;
 import org.eclipse.graphiti.ui.platform.AbstractImageProvider;
