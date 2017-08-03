@@ -1,5 +1,8 @@
 package extendingruntime;
 
+import org.eclipse.bpmn2.CallActivity;
+import org.eclipse.bpmn2.GlobalTask;
+import org.eclipse.bpmn2.Task;
 import org.eclipse.bpmn2.modeler.core.features.CustomShapeFeatureContainer;
 import org.eclipse.bpmn2.modeler.core.features.ShowPropertiesFeature;
 import org.eclipse.bpmn2.modeler.core.model.ModelDecorator;

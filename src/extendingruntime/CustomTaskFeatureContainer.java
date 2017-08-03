@@ -26,6 +26,7 @@ public class CustomTaskFeatureContainer extends CustomShapeFeatureContainer {
 	 @Override
 	 protected TaskFeatureContainer createFeatureContainer(IFeatureProvider fp) {
 		return new TaskFeatureContainer() {
+			
 			@Override
 			public ICreateFeature getCreateFeature(IFeatureProvider fp) {
 				return new CreateTaskFeature(fp) {

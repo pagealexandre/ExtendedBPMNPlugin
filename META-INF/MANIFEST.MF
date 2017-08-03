@@ -11,4 +11,7 @@ Require-Bundle: org.eclipse.bpmn2;bundle-version="1.4.0",
  org.eclipse.bpmn2.modeler.ui;bundle-version="1.4.0",
  org.eclipse.graphiti;bundle-version="0.14.0",
  org.eclipse.graphiti.ui;bundle-version="0.14.0",
- org.apache.xerces;bundle-version="2.9.0"
+ org.apache.xerces;bundle-version="2.9.0",
+ org.eclipse.graphiti.mm
+Import-Package: org.eclipse.core.runtime;version="3.5.0",
+ org.eclipse.emf.validation

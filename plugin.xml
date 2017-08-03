@@ -46,6 +46,19 @@
                value="SecureSequenceFlow">
          </property>
       </customTask>
+      <customTask
+            category="Extended BPMN Workflow"
+            featureContainer="extendingruntime.SecureSubChoreographyFeatureContainer"
+            icon="lock.png"
+            id="ExtendingRuntime.secureSubChoreography"
+            name="Secure Sub Choreography"
+            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            type="SubChoreography">
+         <property
+               name="type"
+               value="SecureSubChoreography">
+         </property>
+      </customTask>
    </extension>
 
 </plugin>
