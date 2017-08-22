@@ -1,4 +1,4 @@
-package bpmn2.tutorial;
+package bpmn2.runtime;
 
 import org.eclipse.bpmn2.modeler.core.utils.ModelUtil.Bpmn2DiagramType;
 import org.eclipse.bpmn2.modeler.ui.AbstractBpmn2RuntimeExtension;
@@ -6,11 +6,11 @@ import org.eclipse.bpmn2.modeler.ui.wizards.FileService;
 import org.eclipse.ui.IEditorInput;
 import org.xml.sax.InputSource;
 
-public class ImixsRuntimeExtension extends AbstractBpmn2RuntimeExtension {
+public class RuntimeExtensionEngine extends AbstractBpmn2RuntimeExtension {
 
-	public static final String RUNTIME_ID = "bpmn2.tutorial.ImixsRuntimeExtension";
+	public static final String RUNTIME_ID = "uk.ac.kent.bpmn2.runtime";
 
-	public static final String targetNamespace = "http://bpmn2.tutorial.org/bpmn2";
+	public static final String targetNamespace = "https://www.kent.ac.uk";
 
 	@Override
 	public String getTargetNamespace(Bpmn2DiagramType diagramType) {
@@ -28,7 +28,7 @@ public class ImixsRuntimeExtension extends AbstractBpmn2RuntimeExtension {
 		InputSource source = new InputSource(
 				FileService.getInputContents(input));
 		RootElementParser parser = new RootElementParser(
-				"http://bpmn2.tutorial.org/bpmn2");
+				"https://www.kent.ac.uk");
 		parser.parse(source);
 		return parser.getResult();
 	}

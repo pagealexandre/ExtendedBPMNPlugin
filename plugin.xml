@@ -4,42 +4,34 @@
    <extension
          point="org.eclipse.bpmn2.modeler.runtime">
       <runtime
-            class="bpmn2.tutorial.ImixsRuntimeExtension"
-            id="bpmn2.tutorial.ImixsRuntimeExtension"
-            name="ImixsRuntimeExtension">
+            class="bpmn2.runtime.RuntimeExtensionEngine"
+            id="uk.ac.kent.bpmn2.runtime"
+            name="Runtime Extension Engine ">
       </runtime>
       <customTask
             category="Extended BPMN Workflow"
-            featureContainer="extendingruntime.SecureCallActivityFeatureContainer"
-            icon="risk.png"
-            id="ExtendingRuntime.secureCallActivity"
-            name="Secure Call Activity"
-            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
-            type="CallActivity">
-         <property
-               name="type"
-               value="SecureCallActivity">
-         </property>
-      </customTask>
-      <customTask
-            category="Extended BPMN Workflow"
-            featureContainer="extendingruntime.CustomTaskFeatureContainer"
+            featureContainer="bpmn2.runtime.SecureTaskFeatureContainer"
             icon="lock.png"
             id="ExtendingRuntime.customTask"
-            name="Custom Task"
-            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            name="Secure Task"
+            runtimeId="uk.ac.kent.bpmn2.runtime"
             type="Task">
          <property
                name="type"
-               value="CustomTask">
+               value="SecureTask">
+         </property>
+         <property
+               name="restraint"
+               type="EBoolean"
+               value="false">
          </property>
       </customTask>
       <customTask
             category="Extended BPMN Workflow"
-            featureContainer="extendingruntime.SecureSequenceFlowFeatureContainer"
+            featureContainer="bpmn2.runtime.SecureSequenceFlowFeatureContainer"
             id="ExtendingRuntime.secureSequenceFlow"
             name="Secure Sequence Flow"
-            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            runtimeId="uk.ac.kent.bpmn2.runtime"
             type="SequenceFlow">
          <property
                name="type"
@@ -48,15 +40,33 @@
       </customTask>
       <customTask
             category="Extended BPMN Workflow"
-            featureContainer="extendingruntime.SecureSubChoreographyFeatureContainer"
+            featureContainer="bpmn2.runtime.SecureSubChoreographyFeatureContainer"
             icon="lock.png"
             id="ExtendingRuntime.secureSubChoreography"
             name="Secure Sub Choreography"
-            runtimeId="bpmn2.tutorial.ImixsRuntimeExtension"
+            runtimeId="uk.ac.kent.bpmn2.runtime"
             type="SubChoreography">
          <property
                name="type"
                value="SecureSubChoreography">
+         </property>
+         <property
+               name="restraint"
+               type="EBoolean"
+               value="false">
+         </property>
+      </customTask>
+      <customTask
+            category="Extended BPMN Workflow"
+            featureContainer="bpmn2.runtime.SecureAuthenticationFeatureContainer"
+            icon="login.png"
+            id="ExtendingRuntime.secureAuth"
+            name="Secure Authentication"
+            runtimeId="uk.ac.kent.bpmn2.runtime"
+            type="SubChoreography">
+         <property
+               name="type"
+               value="SecureAuthentication">
          </property>
       </customTask>
    </extension>

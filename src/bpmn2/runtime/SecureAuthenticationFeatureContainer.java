@@ -1,10 +1,8 @@
-package extendingruntime;
+package bpmn2.runtime;
 
 import org.eclipse.bpmn2.SubChoreography;
-import org.eclipse.bpmn2.Task;
 import org.eclipse.bpmn2.modeler.core.features.CustomShapeFeatureContainer;
 import org.eclipse.bpmn2.modeler.core.features.ShowPropertiesFeature;
-import org.eclipse.bpmn2.modeler.core.features.activity.task.AddTaskFeature;
 import org.eclipse.bpmn2.modeler.core.model.ModelDecorator;
 import org.eclipse.bpmn2.modeler.core.runtime.CustomTaskImageProvider;
 import org.eclipse.bpmn2.modeler.ui.features.choreography.AddSubChoreographyFeature;
@@ -22,14 +20,14 @@ import org.eclipse.graphiti.mm.pictograms.ContainerShape;
 import org.eclipse.graphiti.mm.pictograms.Shape;
 import org.eclipse.graphiti.services.Graphiti;
 
-import extendingruntime.ImageManager.IconSize;
+import bpmn2.runtime.ImageManager.IconSize;
 
-public class SecureSubChoreographyFeatureContainer extends CustomShapeFeatureContainer {
+public class SecureAuthenticationFeatureContainer extends CustomShapeFeatureContainer {
 	
-	private final static String TYPE_VALUE = "SecureSubChoreography";
-	private final static String CUSTOM_CALL_SUB_CHOREOGRAPHY_ID = "ExtendingRuntime.secureSubChoreography";
+	private final static String TYPE_VALUE = "SecureAuthentication";
+	private final static String CUSTOM_CALL_LOGIN_ID = "ExtendingRuntime.secureAuth";
 	 
-	public SecureSubChoreographyFeatureContainer() {
+	public SecureAuthenticationFeatureContainer() {
 		
 	}
 	
@@ -58,8 +56,7 @@ public class SecureSubChoreographyFeatureContainer extends CustomShapeFeatureCon
 							super.decorateShape(context, containerShape, businessObject);
 							Shape shape = containerShape.getChildren().get(0);
 							GraphicsAlgorithm ga = shape.getGraphicsAlgorithm();
-							Image img = CustomTaskImageProvider.createImage(customTaskDescriptor, ga,
-										"lock.png", 24, 24);
+							Image img = CustomTaskImageProvider.createImage(customTaskDescriptor, ga, "login.png", 24, 24);
 							Graphiti.getGaService().setLocationAndSize(img, 12, 24, 24, 24);
 						}
 					};
@@ -73,7 +70,7 @@ public class SecureSubChoreographyFeatureContainer extends CustomShapeFeatureCon
 		 if (f!=null) {
 			 Object id = object.eGet(f);
 			 if (TYPE_VALUE.equals(id))
-			 return CUSTOM_CALL_SUB_CHOREOGRAPHY_ID;
+			 return CUSTOM_CALL_LOGIN_ID;
 		 }
 	 
 		 return null;

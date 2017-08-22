@@ -1,4 +1,4 @@
-package extendingruntime;
+package bpmn2.runtime;
 
 import java.net.URL;
 
@@ -11,8 +11,6 @@ import org.eclipse.graphiti.ui.internal.GraphitiUIPlugin;
 import org.eclipse.graphiti.ui.platform.AbstractImageProvider;
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
-
-import bpmn2.tutorial.ImixsRuntimeExtension;
 
 public class ImageManager extends AbstractImageProvider {
 
@@ -38,10 +36,10 @@ public class ImageManager extends AbstractImageProvider {
 	public static void registerAvailableImages() {
 		if (!registered) {
 			ImageRegistry imageRegistry = GraphitiUIPlugin.getDefault().getImageRegistry();
-			TargetRuntime rt = TargetRuntime.getRuntime(ImixsRuntimeExtension.RUNTIME_ID);
+			TargetRuntime rt = TargetRuntime.getRuntime(RuntimeExtensionEngine.RUNTIME_ID);
 			for (IconSize size : IconSize.values()) {
 				for (CustomTaskDescriptor ctd : rt.getCustomTaskDescriptors()) {
-					String imageId = getImageId(ctd,size); 
+					String imageId = getImageId(ctd,size);
 					if (imageId != null) {
 						String filename = getImagePath(ctd,size);
 						URL url = ImageManager.class.getClassLoader().getResource(filename);
@@ -56,7 +54,7 @@ public class ImageManager extends AbstractImageProvider {
 	
 	@Override
 	protected void addAvailableImages() {
-		TargetRuntime rt = TargetRuntime.getRuntime(ImixsRuntimeExtension.RUNTIME_ID);
+		TargetRuntime rt = TargetRuntime.getRuntime(RuntimeExtensionEngine.RUNTIME_ID);
 		for (IconSize size : IconSize.values()) {
 			for (CustomTaskDescriptor ctd : rt.getCustomTaskDescriptors()) {
 				String imageId = getImageId(ctd,size); 
@@ -72,7 +70,6 @@ public class ImageManager extends AbstractImageProvider {
 		// to prevent pixelation when stretching a small image
 		String imageId = ImageManager.getImageId(ctd, IconSize.HUGE);
 		Image img = null;
-		System.out.println("A" + imageId);
 		if (imageId != null) {
 			img = Graphiti.getGaService().createImage(ga, imageId);
 			img.setProportional(false);
@@ -82,7 +79,6 @@ public class ImageManager extends AbstractImageProvider {
 			img.setStretchV(true);
 			img.setX(2);
 			img.setY(10);
-			System.out.println("BINGO");
 		}
 		return img;
 	}

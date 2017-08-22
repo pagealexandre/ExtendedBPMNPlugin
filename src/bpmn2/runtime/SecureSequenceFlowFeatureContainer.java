@@ -1,13 +1,11 @@
-package extendingruntime;
+package bpmn2.runtime;
 
 import org.eclipse.bpmn2.SequenceFlow;
 import org.eclipse.bpmn2.modeler.core.features.CustomConnectionFeatureContainer;
-import org.eclipse.bpmn2.modeler.core.features.CustomShapeFeatureContainer;
 import org.eclipse.bpmn2.modeler.core.features.IFeatureContainer;
 import org.eclipse.bpmn2.modeler.core.features.ShowPropertiesFeature;
 import org.eclipse.bpmn2.modeler.core.model.ModelDecorator;
 import org.eclipse.bpmn2.modeler.ui.features.flow.SequenceFlowFeatureContainer;
-import org.eclipse.bpmn2.modeler.ui.features.flow.SequenceFlowFeatureContainer.AddSequenceFlowFeature;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.graphiti.features.IAddFeature;
